@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "ts-node-dev src/index.ts"
+    "dev": "ts-node-dev src/index.ts",
+    "migration:generate": "ts-node-dev ./node_modules/typeorm/cli.js migration:generate -c localhost",
+    "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -c localhost",
+    "migration:revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert -c localhost"
   },
   "license": "MIT",
   "dependencies": {

@@ -1,13 +1,36 @@
-{
-  "type": "mysql",
-  "host": "backend_db",
-  "port": 3306,
-  "username": "typeorm-apollo-server",
-  "password": "typeorm-apollo-server",
-  "database": "typeorm-apollo-server",
-  "synchronize": false,
-  "logging": true,
-  "entities": ["src/entity/**/*.ts"],
-  "migrations": ["src/migration/**/*.ts"],
-  "subscribers": ["src/subscriber/**/*.ts"]
-}
+[
+  {
+    "name": "default",
+    "type": "mysql",
+    "host": "backend_db",
+    "port": 3306,
+    "username": "typeorm-apollo-server",
+    "password": "typeorm-apollo-server",
+    "database": "typeorm-apollo-server",
+    "synchronize": false,
+    "logging": true,
+    "entities": ["src/entity/**/*.ts"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "migrationsDir": "src/migration"
+    }
+  },
+  {
+    "name": "localhost",
+    "type": "mysql",
+    "host": "127.0.0.1",
+    "port": 13306,
+    "username": "typeorm-apollo-server",
+    "password": "typeorm-apollo-server",
+    "database": "typeorm-apollo-server",
+    "synchronize": false,
+    "logging": true,
+    "entities": ["src/entity/**/*.ts"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "migrationsDir": "src/migration"
+    }
+  }
+]
