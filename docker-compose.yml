@@ -1,0 +1,42 @@
+version: '3.7'
+services:
+  web:
+    image: node:lts-alpine
+    environment:
+      YARN_CACHE_FOLDER: /yarn
+    volumes:
+      - yarn_cache:/yarn
+      - node_modules_cache:/usr/src/web-backend/node_modules
+      - .:/usr/src/web-backend
+    working_dir: /usr/src/web-backend
+    ports:
+      - '13000:3000'
+    command: ash -c 'yarn && yarn dev'
+    tty: true
+    dns: 8.8.8.8
+    depends_on:
+      backend_db:
+        condition: service_healthy
+
+  backend_db:
+    image: mysql:latest
+    command: --lower_case_table_names=1 --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./docker/local/tmp/mysql:/var/lib/mysql
+    ports:
+      - '13306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: typeorm-apollo-server
+      MYSQL_PASSWORD: typeorm-apollo-server
+      MYSQL_DATABASE: typeorm-apollo-server
+    healthcheck:
+      test: mysqladmin ping -h127.0.0.1 -P3306 -u$$MYSQL_USER -p$$MYSQL_PASSWORD
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  yarn_cache:
+  node_modules_cache:
