@@ -1,33 +1,8 @@
-import { gql } from 'apollo-server'
 import { getConnection } from 'typeorm'
 import { User } from '../entity/User'
+import { Resolvers } from './generated/graphql'
 
-export const typeDefs = gql`
-  type User {
-    id: Int!
-    name: String!
-    posts: [Post!]!
-  }
-
-  type Post {
-    id: Int!
-    title: String!
-    user: User!
-    comments: [Comment!]!
-  }
-
-  type Comment {
-    id: Int!
-    title: String!
-    post: Post!
-  }
-
-  type Query {
-    users: [User!]!
-  }
-`
-
-export const resolvers = {
+export const resolvers: Resolvers = {
   Query: {
     users: async () => {
       return await users()

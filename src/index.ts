@@ -1,7 +1,8 @@
 import 'reflect-metadata'
 import express from 'express'
 import { createConnection } from 'typeorm'
-import { typeDefs, resolvers } from './graphql/index'
+import { resolvers } from './graphql/index'
+import { typeDefs } from './graphql/typeDefs'
 import { ApolloServer } from 'apollo-server-express'
 
 createConnection().then(async (_connection) => {
