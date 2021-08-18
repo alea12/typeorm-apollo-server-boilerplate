@@ -1,15 +1,16 @@
 import 'reflect-metadata'
 import express from 'express'
 import { createConnection } from 'typeorm'
+import { typeDefs, resolvers } from './graphql/index'
+import { ApolloServer } from 'apollo-server-express'
 
-createConnection().then((_connection) => {
+createConnection().then(async (_connection) => {
+  const server = new ApolloServer({ typeDefs, resolvers })
+  await server.start()
+
   const app = express()
+  server.applyMiddleware({ app })
 
-  app.get('/', (_, res) => {
-    res.send('Hello, world!')
-  })
-
-  app.listen(3000)
-
-  console.log(`app started at http://localhost:13000 (from docker host)`)
+  app.listen({ port: 3000 })
+  console.log(`🚀 Server ready at http://localhost:3000${server.graphqlPath}`)
 })
