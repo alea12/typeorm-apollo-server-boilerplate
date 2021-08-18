@@ -1,15 +1,15 @@
-# Boilerplate for TypeORM + Apollo Server BFF
+# GraphQL (TypeORM + Apollo) BFF Boilerplate
 
 ## Stack
 
-| Name                   | Usage                        |
-| ---------------------- | ---------------------------- |
-| MySQL                  | Database                     |
-| TypeORM                | ORM                          |
-| Apollo Server          | GraphQL Server               |
-| Express                | HTTP Server                  |
-| ts-node-dev            | TypeScript Executor          |
-| GraphQL Code Generator | GraphQL => TS Type Generater |
+| Name                   | Usage                        | Possible Alternatives |
+| ---------------------- | ---------------------------- | --------------------- |
+| MySQL                  | Database                     | Depends on ORM        |
+| TypeORM                | ORM                          | Prisma                |
+| Apollo Server          | GraphQL Server               | GraphQL Helix         |
+| Express                | HTTP Server                  | Fastify               |
+| ts-node-dev            | TypeScript Executor          |                       |
+| GraphQL Code Generator | GraphQL => TS Type Generater |                       |
 
 ## Requirements
 
@@ -17,7 +17,7 @@
 
 | Software | Tested Version | Link                                                                                                                                                                         |
 | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Node.js  | `16.5.0`       | - [Installing Node.js via package manager](https://nodejs.org/en/download/package-manager/)                                                                                  |
+| Node.js  | `14.17.5`      | - [Installing Node.js via package manager](https://nodejs.org/en/download/package-manager/)                                                                                  |
 | Yarn     | `1.22.11`      | - [Installation](https://yarnpkg.com/getting-started/install)                                                                                                                |
 | Docker   | `20.10.7`      | - [Install Docker Desktop on Mac](https://docs.docker.com/desktop/mac/install/) <br> - [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/) |
 
