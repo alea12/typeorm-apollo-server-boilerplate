@@ -41,6 +41,8 @@ yarn install
 docker-compose up
 ```
 
+...and access [http://localhost:13000/graphql](http://localhost:13000/graphql) from your host machine.
+
 ### Database Migration
 
 From your host machine (docker process must be **up** before operation):
