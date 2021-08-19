@@ -545,14 +545,6 @@
     "@graphql-tools/utils" "^8.0.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/introspection@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/introspection/-/introspection-2.0.0.tgz#1cbf962d58cb3571ab25211489f297cea220685f"
-  integrity sha512-wfveK5l155b/uyOxsBPa4XzZ9KB0vpYRKKs6qakxBpRXGLYMUEKrPmDbzFXuj8uOppyTqVuewspiiI/ax6srPQ==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.0.0"
-    tslib "~2.3.0"
-
 "@graphql-codegen/plugin-helpers@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-2.0.0.tgz#8c66be320f63a69760112c46fc7c23c2de53382b"
