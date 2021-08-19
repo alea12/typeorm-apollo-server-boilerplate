@@ -5,7 +5,9 @@ import { resolvers } from './graphql/index'
 import { typeDefs } from './graphql/typeDefs'
 import { ApolloServer } from 'apollo-server-express'
 
-createConnection().then(async (_connection) => {
+const app = async () => {
+  await createConnection()
+
   const server = new ApolloServer({ typeDefs, resolvers })
   await server.start()
 
@@ -13,5 +15,8 @@ createConnection().then(async (_connection) => {
   server.applyMiddleware({ app })
 
   app.listen({ port: 3000 })
-  console.log(`🚀 Server ready at http://localhost:3000${server.graphqlPath}`)
-})
+  console.log(`🚀 Server ready: http://localhost:3000${server.graphqlPath}`)
+  console.log(`🐳 From docker: http://localhost:13000${server.graphqlPath}`)
+}
+
+app()
