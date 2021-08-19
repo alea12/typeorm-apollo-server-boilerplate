@@ -36,9 +36,9 @@ These ports must be vacant and accessible from the docker host machine:
 
 From your host machine:
 
-```
+```sh
 yarn install
-docker-compose up
+yarn start # or: docker compose up
 ```
 
 ...and access [http://localhost:13000/graphql](http://localhost:13000/graphql) from your host machine.
@@ -47,7 +47,7 @@ docker-compose up
 
 From your host machine (docker process must be **up** before operation):
 
-```
+```sh
 yarn migration:generate -n MIGRATION_NAME_HERE
 yarn migration:run
 ```
@@ -56,7 +56,8 @@ yarn migration:run
 
 From your host machine (docker process must be **shut down** before operation):
 
-```
+```sh
+# this is an example. express is already installed in this project
 yarn add express
 yarn add -D @types/express
 ```
@@ -65,12 +66,12 @@ yarn add -D @types/express
 
 From your host machine (docker process must be **up** before operation):
 
-```
+```sh
 mysql -h127.0.0.1 -P13306 -u'typeorm-apollo-server' -p'typeorm-apollo-server' typeorm-apollo-server
 ```
 
 In [connection URL syntax](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-jdbc-url-format.html):
 
-```
+```sh
 mysql://typeorm-apollo-server:typeorm-apollo-server@127.0.0.1:13306/typeorm-apollo-server
 ```
