@@ -22,5 +22,10 @@ export const typeDefs = gql`
 
   type Query {
     users: [User!]!
+    user(id: Int!): User
+  }
+
+  type Mutation {
+    createUser(name: String!): Boolean!
   }
 `
