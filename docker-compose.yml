@@ -12,7 +12,7 @@ services:
     working_dir: /usr/src/web-backend
     ports:
       - '13000:3000'
-    command: ash -c 'yarn && yarn dev'
+    command: ash -c 'yarn && yarn dev:server'
     tty: true
     dns: 8.8.8.8
     depends_on:
@@ -33,10 +33,10 @@ services:
       MYSQL_DATABASE: typeorm-apollo-server
     healthcheck:
       test: mysqladmin ping -h127.0.0.1 -P3306 -u$$MYSQL_USER -p$$MYSQL_PASSWORD
-      interval: 10s
-      timeout: 10s
+      interval: 3s
+      timeout: 3s
       retries: 10
-      start_period: 10s
+      start_period: 3s
 
 volumes:
   yarn_cache:
