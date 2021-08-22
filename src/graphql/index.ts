@@ -6,24 +6,24 @@ import { Resolvers } from './generated/graphql'
 
 // Resolver Map
 export const resolvers: Resolvers = {
-  Post: {
-    comments: async (parent: Post) => {
-      return await commentsOfPost(parent)
-    },
-  },
-
   User: {
     posts: async (parent: User) => {
       return await postsOfUser(parent)
     },
   },
 
-  Query: {
-    user: async (_, params) => {
-      return await user(params)
+  Post: {
+    comments: async (parent: Post) => {
+      return await commentsOfPost(parent)
     },
+  },
+
+  Query: {
     users: async () => {
       return await users()
+    },
+    user: async (_, params) => {
+      return await user(params)
     },
   },
 
