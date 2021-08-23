@@ -38,7 +38,7 @@ From your host machine:
 
 ```sh
 yarn install
-yarn start # or: docker compose up
+yarn dev # or: docker compose up
 ```
 
 ...and access [http://localhost:13000/graphql](http://localhost:13000/graphql) from your host machine.

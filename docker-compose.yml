@@ -33,10 +33,10 @@ services:
       MYSQL_DATABASE: typeorm-apollo-server
     healthcheck:
       test: mysqladmin ping -h127.0.0.1 -P3306 -u$$MYSQL_USER -p$$MYSQL_PASSWORD
-      interval: 3s
-      timeout: 3s
+      interval: 1s
+      timeout: 2s
       retries: 10
-      start_period: 3s
+      start_period: 1s
 
 volumes:
   yarn_cache:
